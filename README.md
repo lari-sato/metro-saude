@@ -1,4 +1,6 @@
-# 🚇🏥 “MetrôSaúde”: Acessibilidade a Hospitais Públicos via Rede Metroviária
+# 🚇🏥 MetrôSaúde: Acessibilidade a Hospitais Públicos via Rede Metroviária
+
+---
 
 ## 📘 Definição do Problema 
 A rede metroviária destaca-se por sua capacidade de transportar grandes volumes de pessoas com rapidez, previsibilidade e baixo impacto ambiental, consolidando-se como um dos meios de transporte coletivo mais eficientes nos grandes centros urbanos. Quando integrada ao contexto da saúde pública, essa infraestrutura pode desempenhar um papel estratégico na ampliação do acesso da população aos hospitais públicos. 
@@ -13,8 +15,8 @@ Visamos, assim, compreender a relação entre transporte e saúde sob uma perspe
 ---
 
 ## 👩‍💻 Equipe
-### Julia Santos Oliveira | 10417672 
-### Larissa Yuri Sato | 10418318 
+- **Julia Santos Oliveira | 10417672**
+- **Larissa Yuri Sato | 10418318**
 
 ---
 
@@ -61,7 +63,7 @@ Aposentada que depende do transporte público.
 
 ## ⚙️ Método GOMS (Análise de Tarefas)
 **Meta:** Encontrar o hospital desejado e obter a rota mais rápida. 
- 
+
 **Operadores:** Abrir o app, digitar hospital ou estação, aplicar filtros, selecionar rota.  
 
 **Métodos:**  
