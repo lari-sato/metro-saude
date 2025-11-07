@@ -148,7 +148,4 @@ Aposentada que depende do transporte público.
 ---
 
 ## 🧠 Tecnologias Utilizadas
-- **Frontend:** React Native, Android Studio, HTML, CSS, TypeScript.  
-- **Backend:** Java com API REST (??) 
-- **Banco de Dados:** PostgreSQL + PostGIS (???)
-- **APIs:** Dados Abertos do Metrô/SP, CNES (Ministério da Saúde), dados.gov.br.  
+- React Native, Android Studio, HTML, CSS, TypeScript.   
