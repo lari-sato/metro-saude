@@ -12,10 +12,11 @@ export default function RootLayout() {
         tabBarInactiveTintColor: "#000000",
          tabBarStyle: {
           backgroundColor: "#D9D9D9", 
-          height: 60,  
+          height: 100, 
+          paddingBottom: 10, 
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 13,
         },
       }}
     >
@@ -26,7 +27,7 @@ export default function RootLayout() {
       />
 
       <Tabs.Screen
-        name="pages/navegar"
+        name="pages/Navigation"
         options={{
           title: "Navegar",
           tabBarIcon: ({ color }) => (
@@ -35,7 +36,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="pages/perfil"
+        name="pages/Profile"
         options={{
           title: "Perfil",
           tabBarIcon: ({ color }) => (
@@ -44,7 +45,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="pages/configuracoes"
+        name="pages/Settings"
         options={{
           title: "Configurações",
           tabBarIcon: ({ color }) => (
