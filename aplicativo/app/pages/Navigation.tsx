@@ -4,34 +4,34 @@ import MapView from "react-native-maps";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterPlaces from "../../components/FilterPlaces/FilterPlaces";
 
-const destinations = [
-  { id: "1", nome: "Hospital São Lucas" },
-  { id: "2", nome: "Hospital Central" },
-  { id: "3", nome: "Hospital Vida" },
-  { id: "4", nome: "Hospital Esperança" }
+const hospitals = [
+  { id: "1", name: "Hospital São Lucas", type: "hospital" },
+  { id: "2", name: "Hospital Central", type: "hospital" },
+  { id: "3", name: "Hospital Vida", type: "hospital" },
+  { id: "4", name: "Hospital Esperança", type: "hospital" }
 ];
 
 export default function Navegar() {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
-  const filtered = destinations.filter(
-    place => place.nome.toLowerCase().includes(query.toLowerCase())
-  );
+  const filtered = hospitals
+    .filter(place => place.type === "hospital")
+    .filter(place => place.name.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <View style={styles.container}>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: -23.55052,
-            longitude: -46.633308,
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05,
-          }}
-          showsUserLocation
-          showsMyLocationButton={false}
-        />
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: -23.55052,
+          longitude: -46.633308,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
+        }}
+        showsUserLocation
+        showsMyLocationButton={false}
+      />
 
       <View style={styles.searchContainer}>
         <SearchBar
@@ -62,20 +62,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 10,
   },
-    listContainer: {
-      position: "absolute",
-      top: 90, // abaixo da barra de busca
-      left: 16,
-      right: 16,
-      zIndex: 11,
-      backgroundColor: "#fff",
-      borderRadius: 8,
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.15,
-      shadowRadius: 4,
-      elevation: 5, // para sombra no Android
-      maxHeight: 300, // limita altura máxima da lista
-      paddingVertical: 8,
-    },
+  listContainer: {
+    position: "absolute",
+    top: 90,
+    left: 16,
+    right: 16,
+    zIndex: 11,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    elevation: 5,
+    maxHeight: 300,
+    paddingVertical: 8,
+  },
 });

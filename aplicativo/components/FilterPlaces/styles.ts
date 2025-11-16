@@ -6,11 +6,16 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   listItem: {
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 16,
     paddingHorizontal: 16,
     borderBottomColor: "#eee",
     borderBottomWidth: 1,
     backgroundColor: "#fff",
+  },
+  iconContainer: {
+    marginRight: 12,
   },
   listItemText: {
     fontSize: 16,
