@@ -117,7 +117,7 @@ bottomBar: {
 
 selectBar: {
   flexDirection: "column",
-  alignItems: "flext-start",
+  alignItems: "flex-start",
   justifyContent: "space-between",
   backgroundColor: "#FFFFFF",
   width: "100%",

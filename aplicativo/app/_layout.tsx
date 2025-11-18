@@ -55,11 +55,6 @@ export default function RootLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ href: null }} />
-      <Tabs.Screen name="pages/SelectedHospital" options={{ href: null }} />
-      <Tabs.Screen name="pages/ChooseStation" options={{ href: null }} />
-      <Tabs.Screen name="pages/RouteOptions" options={{ href: null }} />
-      <Tabs.Screen name="pages/ChooseHospital" options={{ href: null }} />
-      <Tabs.Screen name="pages/Navigation" options={{ href: null }} />
 
       <Tabs.Screen
         name="pages/navigation"
