@@ -4,20 +4,39 @@ import { styles } from "./styles";
 import HospitalIcon from "../../assets/icons/hospital.svg";
 import MetroIcon from "../../assets/icons/subway.svg";
 
-type Place = { id: string; name: string; type: string };
-type Props = { places: Place[] };
+type Place = {
+  id: string;
+  name: string;
+  type: string;
+  latitude: number;
+  longitude: number;
+};
 
-export default function FilterPlaces({ places }: Props) {
-  return places.length === 0 ? (
-    <Text style={{ padding: 16, textAlign: "center" }}>
-      Nenhum resultado encontrado.
-    </Text>
-  ) : (
+type Props = {
+  places: Place[];
+  onSelect: (place: Place) => void;
+};
+
+export default function FilterPlaces({ places, onSelect }: Props) {
+  if (places.length === 0) {
+    return (
+      <Text style={{ padding: 16, textAlign: "center" }}>
+        Nenhum resultado encontrado.
+      </Text>
+    );
+  }
+
+  return (
     <FlatList
       data={places}
       keyExtractor={(item) => item.id}
+      style={styles.list}
+      keyboardShouldPersistTaps="handled"
       renderItem={({ item }) => (
-        <TouchableOpacity style={styles.listItem}>
+        <TouchableOpacity
+          style={styles.listItem}
+          onPress={() => onSelect(item)}
+        >
           <View style={styles.iconContainer}>
             {item.type === "hospital" ? (
               <HospitalIcon width={24} height={24} />
@@ -28,7 +47,6 @@ export default function FilterPlaces({ places }: Props) {
           <Text style={styles.listItemText}>{item.name}</Text>
         </TouchableOpacity>
       )}
-      style={styles.list}
     />
   );
 }

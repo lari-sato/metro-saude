@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 16,
     paddingHorizontal: 16,
-    borderBottomColor: "#eee",
+    borderBottomColor: "#1c5ca2",
     borderBottomWidth: 1,
     backgroundColor: "#fff",
   },
@@ -19,6 +19,6 @@ export const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 16,
-    color: "#1c5ca2",
+    color: "#000000",
   },
 });

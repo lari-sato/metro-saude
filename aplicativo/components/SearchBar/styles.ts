@@ -9,15 +9,12 @@ export const styles = StyleSheet.create({
     borderColor: "#1c5ca2",
     borderRadius: 50,
     paddingHorizontal: 10,
-    paddingVertical: 3,
-    marginHorizontal: 12,
-    marginVertical: 1,
+    paddingVertical: 6,
   },
 
   icon: {
     marginRight: 5,
-    },
-
+  },
 
   input: {
     flex: 1,

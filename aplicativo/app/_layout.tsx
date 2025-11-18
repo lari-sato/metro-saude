@@ -1,4 +1,12 @@
 import { Tabs } from "expo-router";
+import { useEffect } from "react";
+import * as SplashScreen from "expo-splash-screen";
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_700Bold,
+} from "@expo-google-fonts/poppins";
 
 // Ícones padrão
 import MapIcon from "../assets/icons/map.svg";
@@ -10,7 +18,23 @@ import MapIconActive from "../assets/icons/map-active.svg";
 import UserIconActive from "../assets/icons/user-active.svg";
 import SettingsIconActive from "../assets/icons/settings-active.svg";
 
+SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold,
+  });
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) return null;
+
   return (
     <Tabs
       screenOptions={{
@@ -26,10 +50,16 @@ export default function RootLayout() {
 
         tabBarLabelStyle: {
           fontSize: 13,
+          fontFamily: "Poppins_500Medium",
         },
       }}
     >
       <Tabs.Screen name="index" options={{ href: null }} />
+      <Tabs.Screen name="pages/SelectedHospital" options={{ href: null }} />
+      <Tabs.Screen name="pages/ChooseStation" options={{ href: null }} />
+      <Tabs.Screen name="pages/RouteOptions" options={{ href: null }} />
+      <Tabs.Screen name="pages/ChooseHospital" options={{ href: null }} />
+
 
       {/* Navegar */}
       <Tabs.Screen
