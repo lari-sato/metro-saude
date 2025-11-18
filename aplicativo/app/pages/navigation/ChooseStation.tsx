@@ -126,7 +126,7 @@ export default function ChooseStation() {
 
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
-          <SearchBar value={query} onChange={setQuery} />
+          <SearchBar value={query} onChange={setQuery} mode="station" />
         </View>
       </View>
 
