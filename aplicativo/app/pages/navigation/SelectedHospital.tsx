@@ -1,5 +1,4 @@
-import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
-import Text from "../../../components/GlobalText";
+import { View, Text, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import CloseButton from "../../../components/CloseButton/CloseButton";
 
@@ -28,14 +27,10 @@ export default function SelectedHospital() {
     <View style={styles.screen}>
       <CloseButton />
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => router.replace("pages/Navigation")}>
-          <Text style={styles.backText}>{"<"}</Text>
-        </TouchableOpacity>
         <Text style={styles.headerTitle}>
           {params.name ?? "Hospital selecionado"}
         </Text>
       </View>
-
       <View style={styles.mapContainer}>
         <MapView
           style={StyleSheet.absoluteFill}
@@ -54,26 +49,28 @@ export default function SelectedHospital() {
           />
         </MapView>
       </View>
-
-      <TouchableOpacity
-        style={styles.bottomCard}
-        onPress={() =>
-          router.push({
-            pathname: "pages/navigation/ChooseStation",
-            params: {
-              hospitalId: params.id,
-              hospitalName: params.name,
-              hospitalLatitude: String(hospitalLat),
-              hospitalLongitude: String(hospitalLng),
-            },
-          })
-        }
-      >
-        <Text style={styles.bottomTitle}>Escolha sua Estação de Partida</Text>
-        <View style={styles.fakeInput}>
-          <Text style={styles.fakeInputText}>Pesquise por uma Estação...</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={styles.bottomBar}>
+        <TouchableOpacity
+          style={styles.selectBar}
+          onPress={() =>
+            router.push({
+              pathname: "pages/navigation/ChooseStation",
+              params: {
+                hospitalId: params.id,
+                hospitalName: params.name,
+                hospitalLatitude: String(hospitalLat),
+                hospitalLongitude: String(hospitalLng),
+              },
+            })
+          }
+          activeOpacity={0.8}
+        >
+          <Text style={styles.barText}>Escolha sua Estação de Partida</Text>
+          <View style={styles.fakeInput}>
+            <Text style={styles.fakeInputText}>Pesquise por uma Estação...</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -81,12 +78,12 @@ export default function SelectedHospital() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#111111",
+    backgroundColor: "#D9D9D9",
     alignItems: "center",
   },
   header: {
     width: "90%",
-    marginTop: 40,
+    marginTop: 50,
     marginBottom: 8,
     flexDirection: "row",
     alignItems: "center",
@@ -99,41 +96,56 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#C0C0C0",
+    color: "#1C5CA2",
   },
   mapContainer: {
-    width: "90%",
+    width: "100%",
     aspectRatio: 9 / 16,
     borderRadius: 16,
     overflow: "hidden",
     backgroundColor: "#EEEEEE",
   },
-  bottomCard: {
-    position: "absolute",
-    bottom: 100,
-    width: "80%",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 16,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    shadowColor: "#000000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  bottomTitle: {
-    fontSize: 14,
-    fontWeight: "500",
+bottomBar: {
+  position: "absolute",
+  left: 0,
+  right: 0,
+  bottom: 0,
+  paddingBottom: 0,
+  paddingHorizontal: 0,
+  zIndex: 20,
+},
+
+selectBar: {
+  flexDirection: "column",
+  alignItems: "flext-start",
+  justifyContent: "space-between",
+  backgroundColor: "#FFFFFF",
+  width: "100%",
+  paddingVertical: 16,
+  paddingHorizontal: 16,
+  elevation: 6,
+  shadowColor: "#000",
+  shadowOffset: { width: 0, height: -2 },
+  shadowOpacity: 0.12,
+  shadowRadius: 4,
+},
+
+  barText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#1C5CA2",
     marginBottom: 8,
   },
   fakeInput: {
     backgroundColor: "#D9D9D9",
     borderRadius: 50,
     paddingVertical: 8,
-    paddingHorizontal: 12,
+    paddingHorizontal: 18,
+    width: "100%"
   },
   fakeInputText: {
     color: "#1C5CA2",
+    fontSize: 14,
   },
+
 });

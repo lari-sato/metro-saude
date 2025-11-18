@@ -15,33 +15,75 @@ type Hospital = {
 };
 
 const hospitals: Hospital[] = [
-  {
+{
     id: "1",
-    name: "Hospital São Lucas",
+    name: "Hospital das Clínicas – FMUSP",
     type: "hospital",
-    latitude: -23.637683617199336,
-    longitude: -46.71999335331073,
+    latitude: -23.561414,
+    longitude: -46.655881
   },
   {
     id: "2",
-    name: "Hospital Central",
+    name: "Hospital Santa Catarina",
     type: "hospital",
-    latitude: -23.552,
-    longitude: -46.63,
+    latitude: -23.557665,
+    longitude: -46.648809
   },
   {
     id: "3",
-    name: "Hospital Vida",
+    name: "Hospital São Paulo (UNIFESP)",
     type: "hospital",
-    latitude: -23.548,
-    longitude: -46.635,
+    latitude: -23.589793,
+    longitude: -46.638571
   },
   {
     id: "4",
-    name: "Hospital Esperança",
+    name: "Hospital do Servidor Público Estadual",
     type: "hospital",
-    latitude: -23.546,
-    longitude: -46.645,
+    latitude: -23.590408,
+    longitude: -46.642682
+  },
+  {
+    id: "5",
+    name: "Hospital Beneficência Portuguesa",
+    type: "hospital",
+    latitude: -23.554370,
+    longitude: -46.632315
+  },
+  {
+    id: "6",
+    name: "Hospital Mandaqui",
+    type: "hospital",
+    latitude: -23.488956,
+    longitude: -46.634046
+  },
+  {
+    id: "7",
+    name: "Hospital Sabará",
+    type: "hospital",
+    latitude: -23.561540,
+    longitude: -46.615146
+  },
+  {
+    id: "8",
+    name: "Hospital Ipiranga",
+    type: "hospital",
+    latitude: -23.602707,
+    longitude: -46.609904
+  },
+  {
+    id: "9",
+    name: "Hospital do Grajaú",
+    type: "hospital",
+    latitude: -23.743926,
+    longitude: -46.634426
+  },
+  {
+    id: "10",
+    name: "Hospital Belém",
+    type: "hospital",
+    latitude: -23.530105,
+    longitude: -46.572047
   },
 ];
 

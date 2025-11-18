@@ -15,10 +15,76 @@ type Station = {
 };
 
 const stations: Station[] = [
-  { id: "se",       name: "Sé",        type: "station", latitude: -23.550309, longitude: -46.6342 },
-  { id: "paraiso",  name: "Paraíso",   type: "station", latitude: -23.574503, longitude: -46.640739 },
-  { id: "ana_rosa", name: "Ana Rosa",  type: "station", latitude: -23.585522, longitude: -46.640471 },
-  { id: "vergueiro",name: "Vergueiro", type: "station", latitude: -23.570215, longitude: -46.636077 },
+{
+    id: "se",
+    name: "Sé",
+    type: "station",
+    latitude: -23.550309,
+    longitude: -46.634200
+  },
+  {
+    id: "paraiso",
+    name: "Paraíso",
+    type: "station",
+    latitude: -23.574503,
+    longitude: -46.640739
+  },
+  {
+    id: "ana_rosa",
+    name: "Ana Rosa",
+    type: "station",
+    latitude: -23.585522,
+    longitude: -46.640471
+  },
+  {
+    id: "vergueiro",
+    name: "Vergueiro",
+    type: "station",
+    latitude: -23.570215,
+    longitude: -46.636077
+  },
+  {
+    id: "luz",
+    name: "Luz",
+    type: "station",
+    latitude: -23.534989,
+    longitude: -46.634634
+  },
+  {
+    id: "bras",
+    name: "Brás",
+    type: "station",
+    latitude: -23.536331,
+    longitude: -46.530729
+  },
+  {
+    id: "pinheiros",
+    name: "Pinheiros",
+    type: "station",
+    latitude: -23.561992,
+    longitude: -46.693431
+  },
+  {
+    id: "butanta",
+    name: "Butantã",
+    type: "station",
+    latitude: -23.574845,
+    longitude: -46.718875
+  },
+  {
+    id: "capaoredondo",
+    name: "Capão Redondo",
+    type: "station",
+    latitude: -23.659863,
+    longitude: -46.762712
+  },
+  {
+    id: "vilamadalena",
+    name: "Vila Madalena",
+    type: "station",
+    latitude: -23.557073,
+    longitude: -46.682096
+  },
 ];
 
 export default function ChooseStation() {

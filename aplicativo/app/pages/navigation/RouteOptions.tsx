@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 import {
   View,
   StyleSheet,
@@ -35,6 +37,8 @@ const TIMES_BY_MODE: Record<Mode, string[]> = {
 };
 
 export default function RouteOptions() {
+  const router = useRouter();
+
   const params = useLocalSearchParams<{
     hospitalName: string;
     hospitalLatitude: string;
@@ -127,18 +131,34 @@ export default function RouteOptions() {
           <View style={styles.timesContainer}>
             <FlatList
               data={times}
-              keyExtractor={(index) => `${mode}-${index}`}
+              keyExtractor={(item, index) => `${mode}-${index}`}
               renderItem={({ item }) => (
-                <View style={styles.timeRow}>
+                <TouchableOpacity
+                  style={styles.timeRow}
+                  onPress={() => {
+                    router.push({
+                      pathname: "/pages/navigation/RouteStart",
+                      params: {
+                        fromLat: stationLat,
+                        fromLng: stationLng,
+                        toLat: hospitalLat,
+                        toLng: hospitalLng,
+                        hospitalName: params.hospitalName,
+                        stationName: params.stationName,
+                        selectedTime: item,
+                      },
+                    });
+                  }}
+                >
                   <CurrentModeIcon width={24} height={24} />
                   <Text style={styles.timeText}>{item}</Text>
-                </View>
+                </TouchableOpacity>
               )}
               ItemSeparatorComponent={() => <Separator />}
             />
+
           </View>
         </View>
-      
     </View>
   );
 }
