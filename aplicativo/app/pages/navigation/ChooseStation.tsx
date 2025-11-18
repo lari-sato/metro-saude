@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "500",
-    fontFamily: "Poppins", 
+    fontFamily: "Poppins_500Medium",
     marginBottom: 18,
   },
   searchContainer: {

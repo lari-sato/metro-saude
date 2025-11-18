@@ -32,6 +32,7 @@ export default function Navegar() {
           value={query}
           onChange={setQuery}
           onFocus={() => router.push("pages/navigation/ChooseHospital")}
+          mode="hospital"
         />
       </View>
     </View>

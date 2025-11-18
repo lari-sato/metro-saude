@@ -19,7 +19,8 @@ export const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 15,
-    height: 40,
+    height: 50,
     color: "#000000",
+    fontFamily: "Poppins_400Regular",
   },
 });

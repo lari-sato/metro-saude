@@ -8,16 +8,31 @@ type SearchBarProps = {
   onChange: (text: string) => void;
   onFocus?: () => void;
   onBlur?: () => void;
+  mode?: "hospital" | "station";
+  placeholder?: string;
 };
 
-export default function SearchBar({ value, onChange, onFocus, onBlur }: SearchBarProps) {
+export default function SearchBar({
+  value,
+  onChange,
+  onFocus,
+  onBlur,
+  mode,
+  placeholder,
+}: SearchBarProps) {
+  const defaultPlaceholder =
+    placeholder ??
+    (mode === "station"
+      ? "Pesquise por uma estação..."
+      : "Pesquise por um hospital...");
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Pesquise por um Hospital..."
+        placeholder={defaultPlaceholder}
         placeholderTextColor="#1c5ca2"
-        aria-label="Pesquisar"
+        accessibilityLabel="Pesquisar"
         value={value}
         onChangeText={onChange}
         onFocus={onFocus}

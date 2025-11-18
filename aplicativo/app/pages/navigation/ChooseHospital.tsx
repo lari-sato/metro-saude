@@ -113,7 +113,7 @@ export default function ChooseHospital() {
 
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
-          <SearchBar value={query} onChange={setQuery} />
+          <SearchBar value={query} onChange={setQuery} mode="hospital" />
         </View>
       </View>
 
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
    title: {
     fontSize: 18,
     fontWeight: "500",
-    fontFamily: "Poppins", 
+    fontFamily: "Poppins_500Medium",
     marginBottom: 18,
   },
   searchContainer: {
