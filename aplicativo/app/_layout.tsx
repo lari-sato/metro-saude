@@ -59,11 +59,10 @@ export default function RootLayout() {
       <Tabs.Screen name="pages/ChooseStation" options={{ href: null }} />
       <Tabs.Screen name="pages/RouteOptions" options={{ href: null }} />
       <Tabs.Screen name="pages/ChooseHospital" options={{ href: null }} />
+      <Tabs.Screen name="pages/Navigation" options={{ href: null }} />
 
-
-      {/* Navegar */}
       <Tabs.Screen
-        name="pages/Navigation"
+        name="pages/navigation"
         options={{
           title: "Navegar",
           tabBarIcon: ({ focused }) =>
@@ -75,7 +74,6 @@ export default function RootLayout() {
         }}
       />
 
-      {/* Perfil */}
       <Tabs.Screen
         name="pages/Profile"
         options={{
@@ -89,7 +87,6 @@ export default function RootLayout() {
         }}
       />
 
-      {/* Configurações */}
       <Tabs.Screen
         name="pages/Settings"
         options={{

@@ -1,5 +1,6 @@
 import React from "react";
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, TouchableOpacity, View } from "react-native";
+import Text from "../GlobalText";
 import { styles } from "./styles";
 import HospitalIcon from "../../assets/icons/hospital.svg";
 import MetroIcon from "../../assets/icons/subway.svg";
@@ -31,6 +32,8 @@ export default function FilterPlaces({ places, onSelect }: Props) {
       data={places}
       keyExtractor={(item) => item.id}
       style={styles.list}
+      scrollEnabled={false}
+      contentContainerStyle={{ paddingBottom: 8 }}
       keyboardShouldPersistTaps="handled"
       renderItem={({ item }) => (
         <TouchableOpacity

@@ -10,7 +10,7 @@ export default function CloseButton() {
   return (
     <TouchableOpacity
       style={styles.button}
-      onPress={() => router.replace("/pages/Navigation")}
+      onPress={() => router.replace("/pages/navigation/Navigation")}
       accessibilityRole="button"
       accessibilityLabel="Fechar"
     >

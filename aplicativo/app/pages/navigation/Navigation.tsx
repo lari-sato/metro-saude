@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Platform } from "react-native";
 import { useRouter } from "expo-router";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../../components/SearchBar/SearchBar";
 
 let MapView: any = View;
 
@@ -31,7 +31,7 @@ export default function Navegar() {
         <SearchBar
           value={query}
           onChange={setQuery}
-          onFocus={() => router.push("pages/ChooseHospital")}
+          onFocus={() => router.push("pages/navigation/ChooseHospital")}
         />
       </View>
     </View>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   top: 40,
   left: 0,
   right: 0,
-  alignItems: "center",   // CENTRALIZADO
+  alignItems: "center",   
   zIndex: 10,
 },
 });

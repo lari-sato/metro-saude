@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import Text from "../../../components/GlobalText";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import CloseButton from "../../components/CloseButton/CloseButton";
+import CloseButton from "../../../components/CloseButton/CloseButton";
 
 let MapView: any = View;
 let Marker: any = () => null;
@@ -58,7 +59,7 @@ export default function SelectedHospital() {
         style={styles.bottomCard}
         onPress={() =>
           router.push({
-            pathname: "pages/ChooseStation",
+            pathname: "pages/navigation/ChooseStation",
             params: {
               hospitalId: params.id,
               hospitalName: params.name,

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-} from "react-native";
+import { View, StyleSheet } from "react-native";
+import Text from "../../../components/GlobalText";
 import { useRouter } from "expo-router";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import CloseButton from "../../components/CloseButton/CloseButton";
-import FilterPlaces from "../../components/FilterPlaces/FilterPlaces";
+import SearchBar from "../../../components/SearchBar/SearchBar";
+import CloseButton from "../../../components/CloseButton/CloseButton";
+import FilterPlaces from "../../../components/FilterPlaces/FilterPlaces";
 
 type Hospital = {
   id: string;
@@ -58,7 +55,7 @@ export default function ChooseHospital() {
 
   function handleSelectHospital(hospital: Hospital) {
     router.push({
-      pathname: "pages/SelectedHospital",
+      pathname: "pages/navigation/SelectedHospital",
       params: {
         id: hospital.id,
         name: hospital.name,
@@ -73,13 +70,13 @@ export default function ChooseHospital() {
       <CloseButton />
 
       <View style={styles.searchContainer}>
-        <SearchBar value={query} onChange={setQuery} />
+        <View style={styles.searchWrapper}>
+          <SearchBar value={query} onChange={setQuery} />
+        </View>
       </View>
 
-      <FilterPlaces
-        places={filteredHospitals}
-        onSelect={handleSelectHospital}
-      />
+      <Text style={styles.title}>Hospitais mais próximos:</Text>
+      <FilterPlaces places={filteredHospitals} onSelect={handleSelectHospital} />
     </View>
   );
 }
@@ -91,8 +88,17 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 16,
   },
+   title: {
+    fontSize: 18,
+    fontWeight: "500",
+    fontFamily: "Poppins", 
+    marginBottom: 18,
+  },
   searchContainer: {
     marginBottom: 14,
-    alignItems: "flex-start"
+    alignItems: "flex-start", 
+  },
+  searchWrapper: {
+    width: "85%", 
   },
 });
