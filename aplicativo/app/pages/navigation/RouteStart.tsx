@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import CloseButton from "../../../components/CloseButton/CloseButton";
+import Text from "../../../components/GlobalText";
 import MetroIcon from "../../../assets/icons/subway.svg";
 
 let MapView: any = View;
